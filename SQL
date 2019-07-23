@@ -146,5 +146,12 @@ SQL> SELECT * FROM COURSE;
 
 11 rows selected.
 
-SQL>
+SQL> INSERT INTO COURSE VALUES(&a,'&b',&c);
+Enter value for a: 111
+Enter value for b: SCALA
+Enter value for c: 50000
+old   1: INSERT INTO COURSE VALUES(&a,'&b',&c)
+new   1: INSERT INTO COURSE VALUES(111,'SCALA',50000)
+
+1 row created.
 

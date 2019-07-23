@@ -56,3 +56,95 @@ SECOND CHARCTER IS A:
 SELECT FIRST_NAME FROM EMPLOYEES WHERE FIRST_NAME LIKE '_a%'
 ENDS WITH N:
 SELECT FIRST_NAME FROM EMPLOYEES WHERE FIRST_NAME LIKE '%n'
+
+
+
+SQL> DELETE FROM COURSE WHERE COURSE_ID=111;
+
+1 row deleted.
+
+SQL> SELECT * FROM COURSE;
+
+ COURSE_ID COURSE_NAME          COURSE_FEE
+---------- -------------------- ----------
+       101 ORACLE                    20000
+       102 JAVA                      25000
+       103 PYTHON                    50000
+       104 COBOL                     10000
+       105 C++                       15000
+       106 C#                        18000
+       107 RUBY                      45000
+       108 DS                        30000
+       109 OS                        24000
+       110 SAP                       60000
+
+10 rows selected.
+
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> SELECT * FROM COURSE;
+
+ COURSE_ID COURSE_NAME          COURSE_FEE
+---------- -------------------- ----------
+       101 ORACLE                    20000
+       102 JAVA                      25000
+       103 PYTHON                    50000
+       104 COBOL                     10000
+       105 C++                       15000
+       106 C#                        18000
+       107 RUBY                      45000
+       108 DS                        30000
+       109 OS                        24000
+       110 SAP                       60000
+       111 SCALA                     50000
+
+11 rows selected.
+
+SQL> UPDATE COURSE SET COURSE_FEE=10000;
+
+11 rows updated.
+
+SQL> SELECT * FROM COURSE;
+
+ COURSE_ID COURSE_NAME          COURSE_FEE
+---------- -------------------- ----------
+       101 ORACLE                    10000
+       102 JAVA                      10000
+       103 PYTHON                    10000
+       104 COBOL                     10000
+       105 C++                       10000
+       106 C#                        10000
+       107 RUBY                      10000
+       108 DS                        10000
+       109 OS                        10000
+       110 SAP                       10000
+       111 SCALA                     10000
+
+11 rows selected.
+
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> SELECT * FROM COURSE;
+
+ COURSE_ID COURSE_NAME          COURSE_FEE
+---------- -------------------- ----------
+       101 ORACLE                    20000
+       102 JAVA                      25000
+       103 PYTHON                    50000
+       104 COBOL                     10000
+       105 C++                       15000
+       106 C#                        18000
+       107 RUBY                      45000
+       108 DS                        30000
+       109 OS                        24000
+       110 SAP                       60000
+       111 SCALA                     50000
+
+11 rows selected.
+
+SQL>
+
